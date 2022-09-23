@@ -23,7 +23,7 @@ Command-line Instructions
 * **Prerequisites:**
     * Java and Maven set up to be done
  ```bash
- cd java-docs-samples/storage/xml-api/cmdline-sample
+ cd TestVagrantSample
 # run
 mvn clean test
 ```
