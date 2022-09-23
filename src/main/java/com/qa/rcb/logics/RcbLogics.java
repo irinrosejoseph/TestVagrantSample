@@ -38,6 +38,29 @@ public class RcbLogics {
 		return foreignPlayerCount;
 		
 	}
+	
+	//Logic for getting the total count of wicket keepers.
+	public static int getKeeperCount()
+	{
+		JSONObject jObj = RcbUtilities.parseJsonData();
+		//initialize a counter to monitor the wicket-keeper count
+		int keeperCount =0;
+		JSONArray jArr = (JSONArray)jObj.get("player");
+		
+		//iterate through the list to get each json object
+		Iterator<JSONObject> ite = jArr.iterator();
+		while(ite.hasNext())
+		{
+			JSONObject obj = ite.next();
+			String role =obj.get("role").toString();
+			if("Wicket-keeper".equalsIgnoreCase(role))
+			{
+				keeperCount++;
+			}
+		}
+		System.out.println("Total number of wicket-keepers : "+keeperCount);
+		return keeperCount;
+	}
 
 	
 	
