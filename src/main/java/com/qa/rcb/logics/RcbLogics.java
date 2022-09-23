@@ -4,64 +4,73 @@ import java.util.Iterator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.testng.Assert;
 
 import com.qa.rcb.utils.RcbUtilities;
 
 public class RcbLogics {
-	
-	
+
+
 	//Logic for getting the total count of foreign players.
-	public static int getForeignPlayersCount()
+	public static int getForeignPlayersCount(JSONArray jArr)
 	{
-		JSONObject jObj = RcbUtilities.parseJsonData();
 		//initialize a counter to monitor the foreign player count
 		int foreignPlayerCount =0;
-		/*
-		 * 
-		 * In the json data players details are availble as array of json objects.
-		 * Get the array and manipulate each json object that is available inside the array. 
-		 */
-		JSONArray jArr = (JSONArray)jObj.get("player");
-		
+
 		//iterate through the list to get each json object
 		Iterator<JSONObject> ite = jArr.iterator();
 		while(ite.hasNext())
 		{
 			JSONObject obj = ite.next();
-			String country = obj.get("country").toString();
-			if(!"india".equalsIgnoreCase(country))
+			Object countryObj = obj.get("country");
+			if(countryObj!=null)
 			{
-				foreignPlayerCount++;
+				String country = countryObj.toString();
+				if(!country.equalsIgnoreCase("india"))
+				{
+					foreignPlayerCount++;
+				}
+			}
+			else
+			{
+				Assert.assertTrue(false,"Country details are mandatory for each player.");
 			}
 		}
 		System.out.println("Total number of foreign players: "+foreignPlayerCount);
 		return foreignPlayerCount;
-		
+
 	}
-	
+
 	//Logic for getting the total count of wicket keepers.
-	public static int getKeeperCount()
+	public static int getKeeperCount(JSONArray jArr)
 	{
-		JSONObject jObj = RcbUtilities.parseJsonData();
+		//JSONObject jObj = RcbUtilities.parseJsonData();
 		//initialize a counter to monitor the wicket-keeper count
 		int keeperCount =0;
-		JSONArray jArr = (JSONArray)jObj.get("player");
-		
+
 		//iterate through the list to get each json object
 		Iterator<JSONObject> ite = jArr.iterator();
 		while(ite.hasNext())
 		{
 			JSONObject obj = ite.next();
-			String role =obj.get("role").toString();
-			if("Wicket-keeper".equalsIgnoreCase(role))
+			Object roleObj = obj.get("role");
+			if(roleObj!=null)
 			{
-				keeperCount++;
+				String role =roleObj.toString();
+				if(role.equalsIgnoreCase("Wicket-keeper"))
+				{
+					keeperCount++;
+				}
+			}
+			else
+			{
+				Assert.assertTrue(false,"Role are mandatory for each player.");
 			}
 		}
 		System.out.println("Total number of wicket-keepers : "+keeperCount);
 		return keeperCount;
 	}
 
-	
-	
+
+
 }

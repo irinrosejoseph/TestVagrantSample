@@ -2,16 +2,20 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-09-23T22:04:25 GST" name="RCB Testing Suite" finished-at="2022-09-23T22:04:25 GST" duration-ms="48">
+  <suite started-at="2022-09-24T00:14:09 GST" name="RCB Testing Suite" finished-at="2022-09-24T00:14:09 GST" duration-ms="43">
     <groups>
     </groups>
-    <test started-at="2022-09-23T22:04:25 GST" name="RCB Tests for player logics" finished-at="2022-09-23T22:04:25 GST" duration-ms="48">
+    <test started-at="2022-09-24T00:14:09 GST" name="RCB Tests for player logics" finished-at="2022-09-24T00:14:09 GST" duration-ms="43">
       <class name="com.qa.rcb.testCases.RcbLogicsTest">
-        <test-method signature="foreignPlayersLogicTest()[pri:1, instance:com.qa.rcb.testCases.RcbLogicsTest@4ae3c1cd]" started-at="2022-09-23T22:04:25 GST" name="foreignPlayersLogicTest" finished-at="2022-09-23T22:04:25 GST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.qa.rcb.testCases.RcbLogicsTest@5906ebcb]" started-at="2022-09-24T00:14:09 GST" name="setUp" finished-at="2022-09-24T00:14:09 GST" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="foreignPlayersLogicTest()[pri:1, instance:com.qa.rcb.testCases.RcbLogicsTest@5906ebcb]" started-at="2022-09-24T00:14:09 GST" name="foreignPlayersLogicTest" finished-at="2022-09-24T00:14:09 GST" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- foreignPlayersLogicTest -->
-        <test-method signature="wicketKeeperLogicTest()[pri:2, instance:com.qa.rcb.testCases.RcbLogicsTest@4ae3c1cd]" started-at="2022-09-23T22:04:25 GST" name="wicketKeeperLogicTest" finished-at="2022-09-23T22:04:25 GST" duration-ms="2" status="PASS">
+        <test-method signature="wicketKeeperLogicTest()[pri:2, instance:com.qa.rcb.testCases.RcbLogicsTest@5906ebcb]" started-at="2022-09-24T00:14:09 GST" name="wicketKeeperLogicTest" finished-at="2022-09-24T00:14:09 GST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- wicketKeeperLogicTest -->
