@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RCB Testing Suite">
+	<test name="RCB Tests for player logics">
+		<classes>
+			<class name="com.qa.rcb.testCases.RcbLogicsTest"></class>
+		</classes>
+	</test>
+</suite>
